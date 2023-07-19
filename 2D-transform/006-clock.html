@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            /* border: 1px solid red; */
+            margin: 100px auto;
+        }
+
+        .clock-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid red;
+            position: relative;
+        }
+
+        .clock-hour {
+            width: 6px;
+            height: 30%;
+            background-color: black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform-origin: left top;
+            transform: rotate(30deg);
+        }
+
+        .clock-minute {
+            width: 4px;
+            height: 40%;
+            background-color: black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform-origin: left top;
+            transform: rotate(60deg);
+        }
+
+        .clock-second {
+            width: 2px;
+            height: 50%;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform-origin: left top;
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock-circle">
+            <div class="clock-hour"></div>
+            <div class="clock-minute"></div>
+            <div class="clock-second"></div>
+        </div>
+    </div>
+    <script>
+        // 获取当前时间
+        const renderClock = () => {
+            const clockHour = document.querySelector('.clock-hour');
+            const clockMinute = document.querySelector('.clock-minute');
+            const clockSecond = document.querySelector('.clock-second');
+            const now = new Date();
+            // 获取当前时间的时分秒
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            const second = now.getSeconds();
+            // 计算时分秒对应的角度
+            const hourDeg = hour * 30 + minute / 60 * 30;
+            const minuteDeg = minute * 6 + second / 60 * 6;
+            const secondDeg = second * 6;
+            // 设置时分秒的角度
+            clockHour.style.transform = `rotate(${hourDeg}deg)`;
+            clockMinute.style.transform = `rotate(${minuteDeg}deg)`;
+            clockSecond.style.transform = `rotate(${secondDeg}deg)`;
+        }
+        renderClock()
+        // 每隔一秒钟调用一次renderClock
+        setInterval(() => {
+            renderClock()
+        }, 1000)
+    </script>
+</body>
+
+</html>
