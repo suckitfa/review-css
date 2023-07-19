@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            border: 1px solid red;
+            margin: 100px auto;
+        }
+        .wheel {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border-radius: 50%;
+            line-height: 100px;
+            text-align: center;
+            
+            transition: all 5s;
+        }
+        /* 先平移再旋转 */
+        .box:hover .wheel {
+            /* 先平移 后旋转*/
+            transform: translate(1000px) rotate(360deg);
+            /* 旋转回改变坐标轴方向 */
+            /* transform: rotate(360deg) translate(1000px); */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="wheel">车</div>
+    </div>
+</body>
+</html>
