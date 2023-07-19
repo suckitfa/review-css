@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转效果</title>
+    <style>
+        img {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            transition: all 1s;
+
+            transform-origin: left bottom;
+        }
+        /* transform-origin 水平原点 left ,right，垂直原点位置top,bottom*/
+        img:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <img src="./imgs/01-bmw.png" alt="">
+</body>
+</html>
