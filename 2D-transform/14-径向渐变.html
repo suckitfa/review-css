@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 50%;
+            background-image: radial-gradient(
+                /* 圆心在水平垂直的方向 */ 
+                50px 0 at content content,
+                red,
+                pink
+            );
+            background-image: radial-gradient(
+                50px 20px at center center,
+                red,
+                pink
+            );
+        }
+        /* 给按钮增加高光效果 */
+        button{
+            width: 100px;
+            height: 40px;
+            background-color: green;
+            border: 0;
+            border-radius: 5px;
+            background-image: radial-gradient(
+                30px at 30px 20px,
+                rgba(255, 255, 255, 0.5),
+                transparent
+            );
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button>点击我</button>
+</body>
+</html>
